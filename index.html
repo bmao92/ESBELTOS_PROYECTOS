@@ -1,111 +1,2090 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5b69d58259.js" crossorigin="anonymous"></script>
     <title>Menú Kathmandú</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
         /* styles bootstrap */
         .navbar{
             padding-top:0;
+        }
+
+        .no-in{
+            display:  none;
+        }
+
+        tr.bg-dark{
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        tr.bg-dark > td{
+
+        }
+
+        .bg-no .no-in{
+            display:  block!important;
+            color: #484848;
+            font-weight: 700;
+        }
+
+        .bg-no h6, .bg-no .text-end, .bg-no .note1{
+            text-decoration: line-through!important;
+        }
+
+        .col-6.mb-2 > .border.col-12.h-100 >.text-end > h6{
+            font-weight: 700;
+        }
+
+        .c-tr{
+            color: transparent;
+        }
+
+        h6 .opc{
+            font-size: 12px;
+            margin-left: 3px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .note1{
+            font-size: 12px;
+            font-style: italic;
         }
 
         .kheader{
             background: url('https://kathmandusite.com/wp-content/uploads/2016/07/kheader.jpg') repeat center center;
         }
 
-    </style>
+        h6 > img,
+        h6 .opc > img {
+            width: 15px;
+            margin-left: 5px;
+            margin-top: -5px;
+        }
+
+        body{
+            background: #000000 url('https://kathmandusite.com/wp-content/uploads/2020/04/post3.jpg') repeat fixed center top
+        }
+
+        .bg-no{
+            background: #dee2e6;
+        }
+
+        .minh-100{
+            min-height: 100px;
+        }
+
+        .border.col-12.h-100{
+            padding: 12px;
+            background: rgb(246,223,205);
+            background: linear-gradient(90deg, rgba(246,223,205,1) 0%, rgba(243,227,211,1) 50%, rgba(249,232,204,1) 100%);
+            border-color: #d7c5b3!important;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 5px 15px 1px rgb(62 59 59 / 11%);
+            box-shadow: 0px 5px 15px 1px #3e3b3b1c;
+        }
+
+        h6.text-center {
+            min-height: 53px;
+            display: flex;
+            align-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            border-color: #d7c5b3!important;
+            padding-bottom: 11px;
+            border-width: 1px!important;
+            border-bottom: solid;
+        }
+
+        .accordion-body.col-12.desserts{
+            background: #ebd3c8 url(https://www.pikpng.com/pngl/b/74-740640_mandala-png-transparent-picture-png-mart-sofa-png.png) repeat center top;
+            background-size: 168px;
+            background-position-x: center;
+            background-position-y: center;
+            background-blend-mode: screen;
+        }
+
+        .divCircle{
+            width: 80px;
+            height: 80px;
+            display: flex;
+            padding: 13px;
+            border-radius: 100%;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #c3c3c3;
+        }
+
+        .divCircle img{
+         padding: 15px;
+         width: inherit;
+     }
+
+     .fuer > .col-4{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: black!important;
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        /* background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e); */
+        background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e)!important;
+        transform: rotate(-180deg);
+    }
+
+    .accordion-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 1.25rem;
+        font-size: 17px;
+        color: #212529;
+        text-align: left;
+        background-color: #efa12d;
+        border: 0;
+        border-radius: 0;
+        overflow-anchor: none;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
+        background: rgb(255,201,125);
+        background: linear-gradient(94deg, rgba(255,201,125,1) 14%, rgba(209,145,57,1) 53%, rgba(212,110,59,1) 93%);
+        font-weight: 700;
+        font-family: 'Quintessential', cursive;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        .fuer{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .fuuu{
+            background: #fff8f8c2 url("https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/3164779/mandala-clipart-md.png") repeat center top;
+            background-size: 77px;
+            background-position-x: center;
+            background-position-y: center;
+            background-blend-mode: screen;
+        }
+
+        .btn-close{
+            font-size: 35px;
+            position: absolute;
+            background: #f9eef6;
+            color: black;
+            font-weight: 700;
+            display: flex;
+            flex-wrap: nowrap;
+            top: -10px;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            padding: 2px;
+            right: 0;
+        }
+
+        .RegionsTitle{
+            padding: 5px 5px 1px;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+            background: rgb(136,19,29);
+            background: linear-gradient(90deg, rgba(136,19,29,1) 0%, rgba(205,40,28,1) 25%, rgba(136,19,29,1) 50%, rgba(205,40,28,1) 75%, rgba(136,19,29,1) 100%);
+            font-family: 'Quintessential', cursive;
+        }
+
+        .divColorMenu{
+            background: rgb(246,223,205);
+            background: linear-gradient(90deg, rgba(246,223,205,1) 0%, rgba(243,227,211,1) 50%, rgba(249,232,204,1) 100%);
+            margin-bottom: 20px;
+        }
+        .divColorMenu > div:nth-child(2) {
+            margin-top: 0px!important;
+            border-top: none!important;
+            padding-top: 0px!important;
+        }
+        .divColorMenu > div:first-child {
+            margin-top: 0px!important;
+            border-top: none!important;
+            padding-top: 5px!important;
+        }
+        .divColorMenu > div {
+            margin-top: 10px;
+            border-top: 1px solid #d7c5b3;
+            padding-top: 10px;
+        }
+
+        .ir-arriba {
+            display:none;
+            padding:20px;
+            background:#024959;
+            font-size:20px;
+            color:#fff;
+            cursor:pointer;
+            position: fixed;
+            bottom:20px;
+            right:20px;
+        }
+
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 10px;
+          z-index: 99;
+          font-size: 18px;
+          border: none;
+          outline: none;
+          background-color: #b33131;
+          color: white;
+          cursor: pointer;
+          padding: 5px 15px;
+          border-radius: 8px;
+          box-shadow: 0px 0px 5px 0px #0c0c0c;
+      }
+
+      #myBtn:hover {
+          background-color: #555;
+      }
+
+  </style>
 </head>
 <body>
-    <div class="container">
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up-to-line"></i></button>
+    <div class="container" style="max-width: 500px;">
         <div>
-         <nav class="fixed-top navbar navbar-dark">
-            <div class="container-fluid kheader pb-2">
-                <img src="logo.png" class="m-auto">
-            </div>
-            <div class="container-fluid bg-dark">
-                <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <h3 class="text-center">Nuestro Menú</h3>
-          </div>
-      </nav>
-  </div>
+            <nav class="fixed-top navbar navbar-dark">
+                <div class="container-fluid kheader pb-2">
+                    <img src="https://kathmandusite.com/wp-content/uploads/2016/06/Letra-kathmandu.png" class="m-auto pb-3 pt-3">
+                </div>
+            </nav>
+        </div>
+
+        <div style="margin-top: 120px;">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            BEBIDAS
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row fuer">
+                                <!--   ======   CÓCTELES DE LA CASA   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseOne" aria-expanded="false" aria-controls="collapsCoctelseOne">
+                                        CÓCTELES DE LA CASA
+                                    </div>
+
+                                    <div id="collapsCoctelseOne" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>KATHMANDÚ</strong></h6>
+                                                    <p class="m-0 note1">Ron, sake, vodka Smirnoff, Bols Amaretto, vino blanco y granadina.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$33.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>BANGKOK DREAMS</strong></h6>
+                                                    <p class="m-0 note1">Tequila, ron, Jack Daniel's, vodka Smirnoff, zumo de naranja, piña y granadina.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$32.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>DESIERTO ROJO</strong></h6>
+                                                    <p class="m-0 note1">Vodka Smirnoff, whisky, ron, tequila, zumo de naranja, granadina y cereza.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$31.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>ESTAMBUL</strong></h6>
+                                                    <p class="m-0 note1">Vodka Smirnoff, ron, helado de mandarina, Convier de durazno y cereza.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$31.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6 bg-no text-muted">
+                                                <div class="p-3">
+                                                    <h6><strong>DUBAI</strong></h6>
+                                                    <p class="m-0 note1">Bols Blue, crema de coco, cachaza, zumo de limón y cereza.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+
+                                                        <span class=""><strong>$31.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>SAGAMARTHA 8848 -EVEREST-</strong></h6>
+                                                    <p class="m-0 note1">Whiskey, Amaretto,Crema de whisky y Bols Blue.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$26.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>K2 8611</strong></h6>
+                                                    <p class="m-0 note1">Exquisita bebida de ron, brandy, vodka Smirnoff, zumo de naranja, granadina y cereza.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$31.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>MAKALU 8485</strong></h6>
+                                                    <p class="m-0 note1">Vodka Smirnoff, vino blanco, Oceanic, Convier de durazno, Ginger, granadina, lychee y cereza.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$32.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   EXÓTICOS CÓCTELES ORIENTALES   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseTwo" aria-expanded="false" aria-controls="collapsCoctelseTwo">
+                                        EXÓTICOS CÓCTELES ORIENTALES
+                                    </div>
+
+                                    <div id="collapsCoctelseTwo" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>PASIÓN ORIENTAL</strong></h6>
+                                                    <p class="m-0 note1">Sensacional mezcla de vodka Smirnoff, lícor de maracuyá, Bols blue, jugo de naranja y maracuyá fresco.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$29.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>AZUL PROFUNDO</strong></h6>
+                                                    <p class="m-0 note1">Refrescante y cremosa bebida de piña, ron, crema de coco y Bols blue.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$32.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
-  <div style="margin-top: 120px;">
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Bebidas
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                        <div style="display: flex;">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>KRAKATOA</strong></h6>
+                                                    <p class="m-0 note1">Deliciosa mezcla de lícor de café, Bols amaretto, whisky. Crema de whisky, frutas naturales y helado de vainilla.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$26.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>SHANGRI-LA</strong></h6>
+                                                    <p class="m-0 note1">Exquisita combinación de crema de whisky, Bols Amaretto. Whisky, licor de café y helado de vainilla.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$26.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>DRAGÓN ROJO</strong></h6>
+                                                    <p class="m-0 note1">Vodka Smirnoff, Bols de durazno, ron, jugo de naranja y granadina.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$31.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>COMETA BAILEYS</strong></h6>
+                                                    <p class="m-0 note1">Cremosa combianción de Whisky, licor de café y Baileys.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$26.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>SINGAPUR</strong></h6>
+                                                    <p class="m-0 note1">Jugo de naranja, ron, crema de coco y durazno.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$26.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6 bg-no">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   CÓCTELES SIN LÍCOR   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseTrhee" aria-expanded="false" aria-controls="collapsCoctelseTrhee">
+                                        CÓCTELES SIN LÍCOR
+                                    </div>
+
+                                    <div id="collapsCoctelseTrhee" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>KUTA</strong></h6>
+                                                    <p class="m-0 note1">Fresca bebida de hierbabuena, crema de coco, Ginger o Soda, limón. Decorado con una bola de helado de vainilla.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$23.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>BALI MOON</strong></h6>
+                                                    <p class="m-0 note1">Refrescante mezcla de jugo de naranja, crema de coco, durazno. Decorado con una bola de helado de vainilla.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$23.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>PASSION FRUIT</strong></h6>
+                                                    <p class="m-0 note1">Exótica bebida de maracuyá, jugo de naranja y crema de coco.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$23.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>BULAN PURNAMA</strong></h6>
+                                                    <p class="m-0 note1">Exótica mezcla de lychess y jengibre, crema de coco, Ginger o Soda, zumo de limón.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$23.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CÓCTEL LASSI</strong></h6>
+                                                    <p class="m-0 note1">Deliciosa mezcla de mango, yogurth tapioka, cúrcuma y crema de coco.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$23.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6 bg-no">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   CÓCTELES TRADICIONALES   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseFour" aria-expanded="false" aria-controls="collapsCoctelseFour">
+                                        CÓCTELES TRADICIONALES
+                                    </div>
+
+                                    <div id="collapsCoctelseFour" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>DRY MARTINI</strong></h6>
+                                                    <p class="m-0 note1">(TANQUERAY)</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$32.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>LYCHEE MARTINI</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$32.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>TEQUILA SUNRISE</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$27.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>GIN TONIC</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$32.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6 bg-no text-muted">
+                                                <div class="p-3">
+                                                    <h6><strong>CAIPIRIÑA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$23.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CABEZA DE JABALÍ</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$36.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>MOJITO</strong></h6>
+                                                    <p class="m-0 note1">Opciones: Tradicional de limón, fresa o lychees.</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$27.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>MARGARITA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$24.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>SANGRÍA</strong></h6>
+                                                    <p class="m-0 note1">Jarra de sangría, ideal para 4 personas.</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$78.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>VINO CALIENTE</strong></h6>
+                                                    <p class="m-0 note1">Vino tinto, brandy, triple sec, jugo de naranja y canela.</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$21.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   BEBIDAS CALIENTES   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseFive" aria-expanded="false" aria-controls="collapsCoctelseFive">
+                                        BEBIDAS CALIENTES
+                                    </div>
+
+                                    <div id="collapsCoctelseFive" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>TE CHAI MASALA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$8.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>TÉ CALIENTE EN AGUA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$5.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>TÉ CALIENTE EN AGUA EN LECHE</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$5.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CAPUCHINO</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$6.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CAPUCHINO CON LÍCOR</strong></h6>
+                                                    <p class="m-0 note1">(Baileys)</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$12.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>EXPRESSO</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$4.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CAFÉ AMERICANO</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$3.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>AROMÁTICA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$6.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>MACCHIATO</strong></h6>
+                                                    <p class="m-0 note1">Expresso con leche vaporizada.</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$4.700</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CAFÉ LATTE</strong></h6>
+                                                    <p class="m-0 note1">Fusión de expresso con leche.</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$4.700</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   VINOS   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseSix" aria-expanded="false" aria-controls="collapsCoctelseSix">
+                                        VINOS
+                                    </div>
+
+                                    <div id="collapsCoctelseSix" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div class="p-3 v-tintos">
+                                            <div>
+                                                VINOS TINTOS
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>KILLKA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197573.png"></h6>
+                                                        <p class="m-0 note1">Malbec - Mendoza</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$159.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>LAGARDE</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197573.png"></h6>
+                                                        <p class="m-0 note1">Malbec - Mendoza</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$172.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>SANTIAGO RESERVA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Malbec - Mendoza</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$109.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>VOLCANES RESERVA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Malbec - Mendoza</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$159.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>BARON FILIPPE DE ROTHSCHILD</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197560.png"></h6>
+                                                        <p class="m-0 note1">Malbec - Mendoza</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$109.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>MARQUEZ DEL RISCAL</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197593.png"></h6>
+                                                        <p class="m-0 note1">Tempranillo Castilla y León</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$123.000</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="p-3 v-blancos">
+                                            <div>
+                                                VINOS BLANCOS
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>SANTIAGO RESERVA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Suavignon Blanc - Valle Central</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$109.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>VOLCANES RESERVA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Suavignon Blanc - Valle de Leyda</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$159.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>MARQUEZ DEL RISCAL</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197593.png"></h6>
+                                                        <p class="m-0 note1">Verdejo - Rueda</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$123.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-3 v-rosados">
+                                            <div>
+                                                VINOS ROSADOS
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>MARQUEZ DEL RISCAL</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197593.png"></h6>
+                                                        <p class="m-0 note1">Garnacha Viura -Rioja</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$116.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2 bg-no text-muted">
+                                                    <div>
+                                                        <h6><strong>AMOROSA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197626.png"></h6>
+                                                        <p class="m-0 note1">Lamburusco moderia</p>
+                                                        <p class="m-0 note2 no-in">Agotado</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$116.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-3 v-r">
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        VINO ESPUMANTE
+                                                    </div>
+                                                    <div>
+                                                        <h6><strong>SANTIAGO 1541</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Demi Sec</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$115.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        VINO DE LA CASA
+                                                    </div>
+                                                    <div>
+                                                        <h6><strong>TERRA MAZZEI</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197626.png"></h6>
+                                                        <p class="m-0 note1">Toscana clasica</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$116.500</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-3 v-premium">
+                                            <div>
+                                                VINOS PREMIUM
+                                            </div>
+                                            <div style="display: flex">
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>SALENTEIN RESERVA</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Malbec</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$195.000</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 p-2">
+                                                    <div>
+                                                        <h6><strong>MOET & CHANDON</strong><img src="https://cdn-icons-png.flaticon.com/512/197/197586.png"></h6>
+                                                        <p class="m-0 note1">Champagne</p>
+                                                        <div class="text-end">
+                                                            <span class=""><strong>$365.000</strong></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   OTROS   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseSeven" aria-expanded="false" aria-controls="collapsCoctelseSeven">
+                                        OTRAS BEBIDAS
+                                    </div>
+
+                                    <div id="collapsCoctelseSeven" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>GASEOSA</strong></h6>
+                                                    <p class="m-0 note1">Coca-Cola(tradicional y Zero), Ginger</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$6.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>BOTELLA DE AGUA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$6.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div id="blocked1" class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>JUGO EN AGUA</strong></h6>
+                                                    <p class="m-0 note1">Maracuyá, Mango, Mora, Piña y Durazno.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$8.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="blocked2" class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>JUGO EN LECHE</strong></h6>
+                                                    <p class="m-0 note1">Maracuyá, Mango, Mora, Piña y Durazno.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$10.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>LIMONADA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$9.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>LIMONADA CEREZADA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$12.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>LIMONADA HIERBABUENA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$10.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>LIMONADA DE COCO</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$12.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>RED BULL</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$13.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>SMIRNOFF ICE</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$13.500</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   CERVEZAS   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseEight" aria-expanded="false" aria-controls="collapsCoctelseEight">
+                                        CERVEZAS
+                                    </div>
+
+                                    <div id="collapsCoctelseEight" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>CORONA</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$16.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>STELLA ARTOIS</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$16.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>BUDWEISER</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$14.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>TSINTAO</strong></h6>
+                                                    <p class="m-0 note1"></p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$16.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: flex">
+                                            <div class="border col-6">
+                                                <div class="p-3">
+                                                    <h6><strong>BBC</strong></h6>
+                                                    <p class="m-0 note1">Cajicá(Miel), Chapinero(Negra) y Monserrate(Roja)</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$16.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border col-6 bg-no text-muted">
+                                                <div class="p-3 hidden">
+                                                    <h6 class=""><strong>CLUB COLOMBIA</strong></h6>
+                                                    <p class="m-0 note1">Dorada, Roja y Negra.</p>
+                                                    <p class="m-0 note2 no-in">Agotado</p>
+                                                    <div class="text-end">
+                                                        <span class=""><strong>$14.000</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   ======   LÍCORES   ======   -->
+                                <div class="accordion-item p-0">
+                                    <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsCoctelseNine" aria-expanded="false" aria-controls="collapsCoctelseNine">
+                                        LÍCORES
+                                    </div>
+
+                                    <div id="collapsCoctelseNine" class="accordion-collapse collapse" data-bs-parent="#collapseOne">
+                                        <table class="table-bordered border" style="margin: auto; width: 100%;">
+
+                                            <!-- ============ WHISKY ============ -->
+                                            <tr class="bg-dark">
+                                                <td>WHISKY</td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Trago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    BUCHANAN'S 18 AÑOS
+                                                </td>
+                                                <td>
+                                                    $360.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $30.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    BUCHANAN'S 12 AÑOS
+                                                </td>
+                                                <td>
+                                                    $245.000
+                                                </td>
+                                                <td>
+                                                    $145.000
+                                                </td>
+                                                <td>
+                                                    $23.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    OLD PARR
+                                                </td>
+                                                <td>
+                                                    $245.000
+                                                </td>
+                                                <td>
+                                                    $165.000
+                                                </td>
+                                                <td>
+                                                    $23.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    JACK DANIEL'S
+                                                </td>
+                                                <td>
+                                                    $235.000
+                                                </td>
+                                                <td>
+                                                    $135.000
+                                                </td>
+                                                <td>
+                                                    $23.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ============ VODKA ============ -->
+                                            <tr class="bg-dark">
+                                                <td>VODKA</td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Trago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    ABSOLUT
+                                                </td>
+                                                <td>
+                                                    $180.000
+                                                </td>
+                                                <td>
+                                                    $95.000
+                                                </td>
+                                                <td>
+                                                    $18.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    SMIRNOFF
+                                                </td>
+                                                <td>
+                                                    $160.000
+                                                </td>
+                                                <td>
+                                                    $85.000
+                                                </td>
+                                                <td>
+                                                    $14.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ============ GINEBRA ============ -->
+                                            <tr class="bg-dark">
+                                                <td>GINEBRA</td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Trago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    HENDRICK'S
+                                                </td>
+                                                <td>
+                                                    $325.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $31.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    BOMBAY
+                                                </td>
+                                                <td>
+                                                    $260.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $21.000
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    TANQUERAY
+                                                </td>
+                                                <td>
+                                                    $235.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $20.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ============ TEQUILA ============ -->
+                                            <tr class="bg-dark">
+                                                <td>TEQUILA</td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Trago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    DON JULIO REPOSADO
+                                                </td>
+                                                <td>
+                                                    $310.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $24.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    JOSE CUERVO DORADO
+                                                </td>
+                                                <td>
+                                                    $165.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $15.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ============ RON ============ -->
+                                            <tr class="bg-dark">
+                                                <td>RON</td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Trago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    HAVANA CLUB AÑEJO
+                                                </td>
+                                                <td>
+                                                    $165.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $14.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    RON VIEJO DE CALDAS
+                                                </td>
+                                                <td>
+                                                    $135.000
+                                                </td>
+                                                <td>
+                                                    $75.000
+                                                </td>
+                                                <td>
+                                                    $11.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ============ AGUARDIENTE ============ -->
+                                            <tr class="bg-dark">
+                                                <td>AGUARDIENTE</td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Trago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    ANTIOQUEÑO (Azul)
+                                                </td>
+                                                <td>
+                                                    $150.000
+                                                </td>
+                                                <td>
+                                                    $80.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ============ SAKE ============ -->
+                                            <tr class="bg-dark">
+                                                <td></td>
+                                                <td class="text-center">Botellla</td>
+                                                <td class="text-center">Media</td>
+                                                <td class="text-center">Jarra</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    SAKE
+                                                </td>
+                                                <td>
+                                                    $90.000
+                                                </td>
+                                                <td class="bg-no">
+                                                </td>
+                                                <td>
+                                                    $26.500
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <br>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ENTRADAS
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body fuuu">
+                            <div class="row fuer">
+                                <div class="divColorMenu">
+                                    <div style="padding-top: 10px!important">
+                                        <h6><strong>ALITAS SICHUAN</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Crocantes alitas de pollo bañadas en salsa agridulce y agripicante. Acompañadas de papas a la francesa.(5 unidades)</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$26.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div style=" margin-top: 10px!important; border-top: 1px solid #d7c5b3!important; padding-top: 10px!important">
+                                        <h6><strong>TEMPURAS</strong></h6>
+                                        <p class="m-0 note1">Pollo en julianas rebozado, acompañado de salsa agridulce y agripicante.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$21.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>TEMPURAS DE VEGETALES</strong></h6>
+                                        <p class="m-0 note1">Vegetales rebozados en harina de lenteja, acompañado de salsa agridulce y agripicante.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>16.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>WOMTOM</strong></h6>
+                                        <p class="m-0 note1">Fina maza de trigo rellenas de pollo, champiñón marinado. Bañados en salsa agridulce y agripicante (4 unidades).</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$14.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>CALAMARES TEMPURIZADOS</strong></h6>
+                                        <p class="m-0 note1">Anillos de calamar rebozados en tempura seca. Acompañados de salsa agripicante.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$25.000</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>KIBBES</strong><span class="opc">Carne o vegetarianos</span></h6>
+                                        <p class="m-0 note1">Croquetas libanesas, rellenas de carne de res o garbanzos. Acompañadas de tahine de garbanzo, tahine de berenjena y labneh.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$19.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>SPRING ROLLS</strong></h6>
+                                        <p class="m-0 note1">Rollitos de vegetales bañados de salsa dulce y agripicante (3 unidades).</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$18.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>FALAFEL</strong></h6>
+                                        <p class="m-0 note1">Croquetas de garbanzo servidas con tahine de berenjena (4 unidades).</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$15.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>SAMOSAS</strong></h6>
+                                        <p class="m-0 note1">Empanadillas hindues rellenas de vegetales o carne acompañadas de chutney de tomáte y tamarindo (2 unidades).</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>14.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>INDIOS</strong></h6>
+                                        <p class="m-0 note1">Rollitos de carne y arroz envueltos en hoja de parra. Acompañados de labneh (6 unidades).</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>14.500</strong></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6><strong>TAHINE DE GARBANZO</strong></h6>
+                                        <p class="m-0 note1">Acompañado de 4 unidades de pan artesanal árabe.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>14.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            PLATOS FUERTES
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body fuuu">
+                            <div class="row fuer">
+
+                                <!--   =====================================================   MEDIO ORIENTE    ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>MEDIO ORIENTE</h5>
+                                    </div>
+                                    <div>
+                                        <h6><strong>PLATO ÁRABE</strong></h6>
+                                        <p class="m-0 note1">Kabab Kafta, Kibbe, Falafel, Pan Arabe, Indios, Arroz Almendrado, Tabule, Labneh, Tahine de Garbanzo y Tahine de Berenjena.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$36.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>MAZZA</strong></h6>
+                                        <span><strong>Ideal para 2 personas</strong></span>
+                                        <p class="m-0 note1">Pollo y lome en julianas, 2 Kibbe, 3 Falafels, 2 Indios, 4 Pan Árabe, Tabule, Labneh, Tahine de Garbanzo y Tahine de Berenjena.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$66.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>SHAWARMA DE POLLO</strong></h6>
+                                        <p class="m-0 note1">Wrap árabe relleno de pollo con vegetales, acompañado de tahine de garbanzo y batata harra.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$31.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>SHAWARMA DE LOMO O MIXTO</strong></h6>
+                                        <p class="m-0 note1">Wrap árabe relleno de lomo o mixto (pollo y res) con vegetales, acompañado de tahine de garbanzo y batata harra.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$33.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>CORDERO MAGREBI</strong></h6>
+                                        <p class="m-0 note1">Rack de Cordero en salsa de anís estrellado, acompañado con pure de papa y tabule. Elegir termino de la preparación.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$48.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>CORDERO MARROQUI</strong></h6>
+                                        <p class="m-0 note1">Finos cortes de lomo de cordero marinados en especias y frutos secos (Almendras y uvas pasas). Acompañado de arroz blanco.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$42.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   =====================================================   INDONESIA   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>INDONESIA</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>NASI GORENG</strong><span class="opc"><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png">Opcional</span></h6>
+                                        <p class="m-0 note1">Plato tradicional de la cocina Indonesa. Arroz salteado al wok, con pollo, vegetales, camarones y langostinos tempurizados.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$42.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>POLLO PADANG</strong></h6>
+                                        <p class="m-0 note1">Pollo en julianas en salsa padang a base de leche de coco y curry amarillo. Acompañado de arroz, puré o ensalada de la casa.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$39.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>UDANG SAMBAL IKAN</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Mezcla de camarones tigre y trozos de pescado salteados con vegetales en la tradicional salsa Sambal (Picante).</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$48.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   =====================================================   INDIA   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>INDIA</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>MUTTON TIKKA MASALA</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Julianas de cordero marinados en especias y preparados en Garam Masala.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$44.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>CHICKEN TIKKA MASALA</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Julianas de pollo marinados  en especias y preparados en Garam Masala.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$42.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>VEGETABLES TIKKA MASALA</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Macedonia de verduras especiadas, elaboradas en Garam Masala y yogurth natural.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$29.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>DAAL</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Termino sánscrito que denomina uno de los platos más populares de la India: "Lentejas Pardas" Acompañado de salsa Raita.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$23.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>SALSA RAITA</strong></h6>
+                                        <p class="m-0 note1">Mezcla de yogurth natural con pepino y especias de la India.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$8.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">      
+                                        <div class="col-6">
+                                            <h6><strong>ARROZ BASMATI</strong></h6>
+                                            <p class="m-0 note1">Tradicional arroz de la India.</p>
+                                            <div class="text-end">
+                                                <span class=""><strong>$9.500</strong></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <h6><strong>PAN PARATHA</strong></h6>
+                                            <p class="m-0 note1">Clásico pan hindú.</p>
+                                            <div class="text-end">
+                                                <span class=""><strong>$7.500</strong></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--   =====================================================   CHINA   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>CHINA</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>CERDO AGRIDULCE CANTONES</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Julianas de cerdo rebozados con vegetales salteados. En salsa cantones acompañados de arroz, puré o ensalada de la casa.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$40.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>LOMO CHIFA</strong></h6>
+                                        <p class="m-0 note1">Julianas de lomo de res salteadas con vegetales y maíz tierno, en salsa típica Chifa. Acompañado de arroz, puré o ensalada de la casa.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$39.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   =====================================================   THAILANDIA   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>THAILANDIA</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>KAM KIO GUAN</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Pollo en julianas y vegetales salteados en leche de coco, curry rojo y verde. Acompañado de arroz, puré o ensalada de la casa.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$40.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>SHU SHI KU</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Mezcla de langostinos, pescado, vegetales aromatizados y salteados en leche de coco, curry rojo y verde. Acompañado de arroz, puré o ensalada de la casa.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$49.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   =====================================================   FUSIÓN DE AROMAS   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>FUSIÓN DE AROMAS</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>ASIA FUSIÓN</strong></h6>
+                                        <p class="m-0 note1">Saborea una ideal mezcla asiática compuesta de 2 samosas vegetarianas, 2 falafel, 2 kibbes. 2 spring rolls, 2 pinchos de cerdo en salsa nassi, tempuras de pollo picante acompañados de chutney de tomáte y tamarindo.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$54.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>LANGOSTINOS THAI</strong><img src="https://cdn-icons-png.flaticon.com/512/1598/1598080.png"></h6>
+                                        <p class="m-0 note1">Langostinos sobre una base de pure de papa, bañados en salsa Thai, ligeramente picante.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$48.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>RAMEN</strong></h6>
+                                        <p class="m-0 note1">Sopa tradicional japonesa elaborada con fideos, pollo, vegetales, palmito de bambú, aceite de ajonjolí y huevo.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$27.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>BROCHETAS KU</strong></h6>
+                                        <p class="m-0 note1">Brochetas de langostinos y salmón en salsa bechamel con mostaza Dijon y mejillones. Acompañado con puré de papa y ensalada de la casa.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$49.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>SALMÓN FUSIÓN</strong></h6>
+                                        <p class="m-0 note1">Filete de salmón en salsa de maracuyá. Acompañado de puré de papa y verduras salteadas.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$49.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>PICADA MIXTA</strong></h6>
+                                        <p class="m-0 note1">Ideal para 2 personas</p>
+                                        <p class="m-0 note1">Lomo de res, pollo, chorizo, costillas de cerdo, papa criolla, batata harra y yuca. Acompañado de tahine de garbanzo y salsa de tomáte.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$59.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   =====================================================   OPCIÓN VEGETARIANA   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>OPCIÓN VEGETARIANA</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>SHAWARMA VEGETARIANO</strong></h6>
+                                        <p class="m-0 note1">Wrap árabe relleno de champiñones y vegetales salteados. Acompañado de tahine de garbanzo, 1 falafel y batata harra.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$28.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>ARROZ BENGALÍ</strong></h6>
+                                        <p class="m-0 note1">Este plato originario del sur de la India, mezcla arroz, garam masala, vegetales y frutos secos (Marañón, albaricoque, uvas pasas). El cual va acompañado de pacoras con chutney de tomáte y tamarindo.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$29.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>PLATO VEGETARIANO</strong></h6>
+                                        <p class="m-0 note1">Falafel, arroz blanco con almendras, tahine de garbanzo, vegetales salteados y pan árabe.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$28.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>CEVICHE TALAI</strong></h6>
+                                        <p class="m-0 note1">Combinación de leche de tigre y champiñones, servido con media lunas de mango.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$22.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--   =====================================================   MENÚ INFANTIL   ===========================================================   -->
+                                <div class="divColorMenu">
+                                    <div class="RegionsTitle row">
+                                        <h5>MENÚ INFANTIL</h5>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>BROCHETAS DE POLLO</strong></h6>
+                                        <p class="m-0 note1">Con salchicha y nuggets. Acompañado de papa francesa y jugo natural en agua o leche.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$19.500</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h6><strong>MUSLITOS DE ALAS</strong></h6>
+                                        <p class="m-0 note1">Acompañadas de papa francesa, salsa de tomate y miel, con jugo natural en agua o leche.</p>
+                                        <div class="text-end">
+                                            <span class=""><strong>$19.500</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            POSTRES
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body col-12 desserts">
+                            <div class="row">
+                                <div class="col-6 mb-2">
+                                    <div class="border col-12 h-100">
+                                        <div class="col">
+                                            <h6 class="text-center"><strong>SRING ROLLS DULCES</strong></h6>
+                                        </div>
+                                        <div class="minh-100">
+                                            <p class="small">Rollitos rellenos de manzana con helado de vainilla.</p>
+                                        </div>
+                                        <div class="text-end">
+                                            <h6>$13.500</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-2">
+                                    <div class="border col-12 h-100">
+                                        <div class="col">
+                                            <h6 class="text-center"><strong>BANANAS TEMPURA</strong></h6>
+                                        </div>
+                                        <div class="minh-100">
+                                            <p class="small">Bananitos rebozados, acompañados de helado de vainilla y salsa de chocolate.</p>
+                                        </div>
+                                        <div class="text-end">
+                                            <h6>$13.500</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-2">
+                                    <div class="border col-12 h-100">
+                                        <div class="col">
+                                            <h6 class="text-center"><strong>LYCHEE PASSION</strong></h6>
+                                        </div>
+                                        <div class="minh-100">
+                                            <p class="small">Copa de helado de maracuyá y lychees.</p>
+                                        </div>
+                                        <div class="text-end">
+                                            <h6>$14.500</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mb-2">
+                                    <div class="border col-12 h-100">
+                                        <div class="col">
+                                            <h6 class="text-center"><strong>OPCIÓN DEL CHEFF</strong></h6>
+                                        </div>
+                                        <div class="minh-100">
+                                            <p class="small">Pregunte por la opción del día.</p>
+                                        </div>
+                                        <div class="text-end">
+                                            <h6>$14.500</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Entradas
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+        <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <img src="https://raw.githubusercontent.com/bmao92/borrador-kathmandu/main/93bda0ad-11b5-4b41-b5c8-8b58260da6d2.jpg">
+                    <button id="btnCloseModal" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        X
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-             Platos fuertes
-         </button>
-     </h2>
-     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-    </div>
-</div>
-</div>
-<div class="accordion-item">
-    <h2 class="accordion-header" id="headingFour">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-         Postres
-     </button>
- </h2>
- <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-  <div class="accordion-body">
-    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-</div>
-</div>
-</div>
-<div class="accordion-item">
-    <h2 class="accordion-header" id="headingFive">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-         Otros
-     </button>
- </h2>
- <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-  <div class="accordion-body">
-    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </body>
+    </html>
 
-</body>
-</html>
-<script type="text/javascript">
-    $("#perro").click(function () {
-        console.log("perro")
-    })
+    <script type="text/javascript">
+        $(document).ready(function () {
+        // $("#eventModal").modal("toggle")
+
+        var dt = new Date();
+        var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+        var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var options = { weekday: 'long' };
+        var a = new Date();
+        // alert(weekday[a.getDay()]);
+        if (dt.getHours() >= 19) {
+            if (a.toLocaleDateString('en-EN', options) === 'Thursday' || a.toLocaleDateString('en-EN', options) === 'Friday' | a.toLocaleDateString('en-EN', options) === 'Saturday') {
+                $("#blocked1").addClass("bg-no text-muted");
+                $("#blocked2").addClass("bg-no text-muted");
+            };
+        };
+    });
+
+        var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
 </script>
